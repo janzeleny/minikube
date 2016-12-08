@@ -31,6 +31,12 @@ $ sudo yum install libvirt-daemon-kvm kvm
 # Add yourself to the libvirtd group (use libvirt group for rpm based distros) so you don't need to sudo
 $ sudo usermod -a -G libvirtd $(whoami)
 
+# Make sure libvirtd is started
+# Systemd-based distros
+$ sudo systemctl start libvirtd.service
+# Other distros
+$ sudo service libvirtd start
+
 # Update your current session for the group change to take effect
 $ newgrp libvirtd
 ```
